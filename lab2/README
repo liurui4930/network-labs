@@ -1,0 +1,12 @@
+
+A file transfer application using TCP sockets. The first 4 bytes (in network byte order) will contain the number of bytes in the file to follow. 
+The next 20 bytes will contain the name of the file. The rest of the bytes in the TCP stream to follow will contain the data in the file.
+
+
+server.c is for the server to recieve and store files 
+client.c is for the client to send files. 
+
+The program is compiled by "make". 
+First start the sever by typing the command "./ftps <local-port>" to open the server. 
+Then open another terminal and start the client with the command "./ftpc <remote-IP> <remote-port> <local-file-to-transfer>". 
+The recieved files will be stored in a newly generated directory called "ftp".    
